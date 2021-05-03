@@ -1,16 +1,17 @@
 package de.vazzi;
 
-import dev.waterdog.ProxyServer;
-import dev.waterdog.command.Command;
-import dev.waterdog.command.CommandSender;
-import dev.waterdog.command.CommandSettings;
-import dev.waterdog.plugin.Plugin;
+import dev.waterdog.waterdogpe.ProxyServer;
+import dev.waterdog.waterdogpe.command.Command;
+import dev.waterdog.waterdogpe.command.CommandSender;
+import dev.waterdog.waterdogpe.command.CommandSettings;
+import dev.waterdog.waterdogpe.plugin.Plugin;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 public class PluginsCommand extends Command {
+
 
     public PluginsCommand() {
         super("wdplugins", CommandSettings.builder()
@@ -21,13 +22,13 @@ public class PluginsCommand extends Command {
     }
 
     @Override
-    public boolean onExecute(CommandSender sender, String alias, String[] args) {
+    public boolean onExecute(CommandSender commandSender, String s, String[] strings) {
         List<String> pluginmap = new ArrayList<>();
         Collection<Plugin> installedplugins = ProxyServer.getInstance().getPluginManager().getPlugins();
         for (Plugin p : installedplugins) {
             pluginmap.add(checkPlugin(p));
         }
-        sender.sendMessage("§eWaterdogPE Plugins [" +  installedplugins.size() + "]: " + String.join("§7, ", pluginmap));
+        commandSender.sendMessage("§eWaterdogPE Plugins [" +  installedplugins.size() + "]: " + String.join("§7, ", pluginmap));
         return true;
     }
 
