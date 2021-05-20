@@ -1,5 +1,5 @@
 # WD-Pluginlist
-WD-Pluginlist is an Plugin for the WaterdogPE Proxy, to display all the plugins which are used on the proxy.
+WD-Pluginlist is a Plugin for the WaterdogPE Proxy, to display all the plugins which are used on the proxy.
 
 <h4>Command: /wdplugins</h4>
 <h4>Permission: waterdog.command.plugins</h4>
